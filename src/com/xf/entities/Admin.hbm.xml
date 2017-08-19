@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-26 11:55:57 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.xf.entities.Admin" table="ADMIN">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="adminID" type="java.lang.String">
+            <column name="ADMINID" />
+        </property>
+        <property name="adminPassword" type="java.lang.String">
+            <column name="ADMINPASSWORD" />
+        </property>
+        <many-to-one name="role" class="com.xf.entities.Role" fetch="join" lazy="false">
+            <column name="ROLE" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

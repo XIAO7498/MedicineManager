@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-26 13:46:57 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.xf.entities.Medicine" table="MEDICINE">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="medNo" type="java.lang.String">
+            <column name="MEDNO" />
+        </property>
+        <property name="medName" type="java.lang.String">
+            <column name="MEDNAME" />
+        </property>
+        <property name="symptom" type="java.lang.String">
+            <column name="SYMPTOM" />
+        </property>
+        <property name="crowd" type="java.lang.String">
+            <column name="CROWD" />
+        </property>
+        <property name="description" type="java.lang.String">
+            <column name="DESCRIPTION" />
+        </property>
+        <property name="price" type="java.lang.Float">
+            <column name="PRICE" />
+        </property>
+        <property name="medCount" type="java.lang.Integer">
+            <column name="MEDCOUNT" />
+        </property>
+        <property name="reqCount" type="java.lang.Integer">
+            <column name="REQCOUNT" />
+        </property>
+        <property name="photoPath" type="java.lang.String">
+            <column name="PHOTOPATH" />
+        </property>
+        <property name="detail1" type="java.lang.String">
+            <column name="DETAIL1" />
+        </property>
+        <property name="detail2" type="java.lang.String">
+            <column name="DETAIL2" />
+        </property>
+        <many-to-one name="category" class="com.xf.entities.Category" fetch="join" lazy="false">
+            <column name="CATEGORY" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

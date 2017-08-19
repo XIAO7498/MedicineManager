@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-24 11:32:44 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.xf.entities.Orders" table="ORDERS">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="deliveryInfo" type="java.lang.String">
+            <column name="DELIVERYINFO" />
+        </property>
+        <property name="payMethod" type="java.lang.String">
+            <column name="PAYMETHOD" />
+        </property>
+        <property name="invoice" type="java.lang.String">
+            <column name="INVOICE" />
+        </property>
+        <property name="createTime" type="java.util.Date">
+            <column name="CREATETIME" />
+        </property>
+        <many-to-one name="user" class="com.xf.entities.User" fetch="join" lazy="false">
+            <column name="USER" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

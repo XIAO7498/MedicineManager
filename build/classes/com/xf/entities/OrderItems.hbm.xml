@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-24 11:32:44 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.xf.entities.OrderItems" table="ORDERITEMS">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="orderNum" type="java.lang.String">
+            <column name="ORDERNUM" />
+        </property>
+        <many-to-one name="medicine" class="com.xf.entities.Medicine" fetch="join" lazy="false">
+            <column name="MEDICINE" />
+        </many-to-one>
+        <property name="medName" type="java.lang.String">
+            <column name="MEDNAME" />
+        </property>
+        <property name="price" type="java.lang.Float">
+            <column name="PRICE" />
+        </property>
+        <property name="quantity" type="java.lang.Integer">
+            <column name="QUANTITY" />
+        </property>
+        <property name="totalMoney" type="java.lang.Float">
+            <column name="TOTALMONEY" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="STATUS" />
+        </property>
+        <many-to-one name="orders" class="com.xf.entities.Orders" fetch="join" lazy="false">
+            <column name="ORDERS" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
